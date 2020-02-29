@@ -4,3 +4,9 @@ spring:
     username: root
     password: jsbbsj
     driver-class-name: com.mysql.cj.jdbc.Driver
+
+  rabbitmq:
+    port: 5672
+    password: guest
+    username: guest
+    addresses: 127.0.0.1

@@ -11,6 +11,8 @@ class PracticeApplicationTests {
 
     @Test
     void contextLoads() {
+        int[][] a = new int[][]();
+        System.out.println();
     }
 
 }
