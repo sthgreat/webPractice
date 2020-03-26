@@ -7,6 +7,9 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public interface PracticeMapper {
 
@@ -19,4 +22,8 @@ public interface PracticeMapper {
     Student selectStudentByNameInnotation(@Param(value = "name") String name);
 
     Student selectStudentByName(@Param(value = "name") String name);
+
+    int BatchInsert(List<Student> list);
+
+    List<Student> FanWeiSelect(@Param(value = "scoreList") ArrayList<Integer> scoreList);
 }

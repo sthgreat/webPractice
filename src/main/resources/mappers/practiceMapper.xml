@@ -9,4 +9,20 @@
     <select id="selectStudentByName" parameterType="java.lang.String" resultType="com.dzkjdx.practice.pojo.Student">
         select s_score, class_num, school from practice where s_name = #{name}
     </select>
+    
+    <insert id="BatchInsert" parameterType="java.util.List">
+        insert into practice
+        values
+        <foreach collection="list" separator="," item="item">
+            (#{item.sId},#{item.sName}, #{item.sScore}, #{item.classNum}, #{item.school})
+        </foreach>
+    </insert>
+
+    <select id="FanWeiSelect" resultType="com.dzkjdx.practice.pojo.Student">
+        select * from practice
+        where s_score in
+        <foreach collection="scoreList" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
 </mapper>
