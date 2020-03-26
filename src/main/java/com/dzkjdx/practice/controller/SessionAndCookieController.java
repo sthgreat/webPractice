@@ -14,6 +14,8 @@ import javax.xml.ws.Response;
 @Controller
 @RequestMapping("/sessionAndCookie")
 public class SessionAndCookieController {
+
+
     @RequestMapping("/session")
     @ResponseBody
     public ResponseVo test(HttpSession session){
